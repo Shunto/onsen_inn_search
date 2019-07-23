@@ -264,7 +264,7 @@ Endpoint:
 Paramters:<br />
 id: return the onsen inn that has the specified id as its primary key<br />
 category: return onsen inns that belong to the specified category(18 categories in total)<br />
-ordering: sort onsen inns by the specific key out of "vote_score", "num_vote_up" and "num_vote_down"<br />
+ordering: sort onsen inns by the specific key out of "vote_score", "num_vote_up" and "num_vote_down"(*specify "?" to get onsen inns in random order -> )<br />
 page: specify the page<br />
 
 Example: 

@@ -81,7 +81,9 @@ class OnsenInnViewSet(viewsets.ModelViewSet):
             category_list = category_value.split(',')
             queryset = queryset.filter(category__in=category_list)
 
+        #ordering_keys = ['-vote_score', '-num_vote_up', '-num_vote_down', '?']
         ordering_value = self.request.query_params.get('ordering', None)
+        #if (ordering_value is not None) and (ordering_value in in ordering_keys):
         if ordering_value is not None:
             queryset = queryset.order_by(ordering_value)
 
