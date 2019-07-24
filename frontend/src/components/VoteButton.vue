@@ -39,6 +39,7 @@ export default {
       .then(response => {
         console.log(response.data)
         this.voted = true
+        window.location.reload(true)
       })
       .catch(err => {
         console.error(err)
@@ -49,6 +50,7 @@ export default {
       .then(response => {
         console.log(response.data)
         this.voted = false
+        window.location.reload(true)
       })
       .catch((error) => {
         console.log(error);

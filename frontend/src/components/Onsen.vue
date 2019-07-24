@@ -9,6 +9,7 @@
           <v-card-title primary-title>
           <div>
             <h3 class=display-3>{{ innname }}</h3>
+            <h3 class=display-3>{{ votescore }}票</h3>
             <br>
             <div class=display-2> {{ makeText(inn) }} </div>
           </div>
@@ -39,6 +40,7 @@ export default {
       inn: null,
       innname: '',
       category: 0,
+      votescore: 0,
       imgpath: [
         [
           require('../assets/images/0/download20190702162626.png'),
@@ -155,6 +157,7 @@ export default {
         this.inn = response.data.results[0]
         this.innname = response.data.results[0].inn_name
         this.category = response.data.results[0]
+        this.votescore = response.data.results[0].vote_score
       })
       .catch(err => {
         console.error(err)

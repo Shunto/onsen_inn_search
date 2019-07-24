@@ -17,7 +17,7 @@
                 <v-card :href="'/#/onsen/' + items[i-1]['id']">
                   <v-layout column wrap>
                     <v-flex xs4>
-                      <h1 class=display-2>{{i}}位</h1>
+                      <h1 class=display-2>{{i}}位: {{items[i-1]['vote_score']}}票</h1>
                     </v-flex>
                     <v-flex xs4>
                       <img class="box" :src="imgpath[category][i-1]" :key="path"/>

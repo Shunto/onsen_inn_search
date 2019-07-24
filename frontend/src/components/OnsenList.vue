@@ -22,6 +22,7 @@
                   <v-list-tile v-for="item in items[page-1]" :key="item.inn_name" @click="goToOnsenPage(item.id)" >
                     <v-list-tile-content>
                       <v-list-tile-title v-text="item.inn_name"></v-list-tile-title>
+                      <v-list-tile-sub-title v-text="item.vote_score + '票'"></v-list-tile-sub-title>
                     </v-list-tile-content>
                   </v-list-tile>
                 </v-list>
@@ -45,6 +46,7 @@ export default {
     return {
       category: 0,
       page: 1,
+      ordering: '-vote_score',
       items: []
     }
   },
@@ -64,6 +66,7 @@ export default {
       axios.get('http://localhost:8000/api/onsen_inns/', {
         params: {
           category: this.category,
+          ordering: this.ordering,
           page: i+1,
         },
       })
