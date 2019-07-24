@@ -30,6 +30,7 @@ export default {
     logout () {
       this.$store.commit("SET_TOKEN", null)
       this.isLoggedIn = false
+      window.location.reload(true)
     }
   }
 }
