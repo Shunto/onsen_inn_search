@@ -19,9 +19,9 @@
             <v-flex xs6>
               <v-card>
                 <v-list>
-                  <v-list-tile v-for="item in items[page-1]" :key="item.inn_name" @click="goToOnsenPage(item.id)" >
+                  <v-list-tile v-for="(item, index) in items[page-1]" :key="item.inn_name" @click="goToOnsenPage(item.id)" >
                     <v-list-tile-content>
-                      <v-list-tile-title v-text="item.inn_name"></v-list-tile-title>
+                      <v-list-tile-title v-text="(index+1+(page-1)*10) + '位: ' + item.inn_name"></v-list-tile-title>
                       <v-list-tile-sub-title v-text="item.vote_score + '票'"></v-list-tile-sub-title>
                     </v-list-tile-content>
                   </v-list-tile>
