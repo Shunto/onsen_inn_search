@@ -11,6 +11,7 @@
           <v-flex xs12>
             <v-btn large href='/#/tinder/'>Tinder</v-btn>
             <LoginButton></LoginButton>
+            <SignupButton></SignupButton>
           </v-flex>
         </v-layout>
       </v-container>
@@ -21,11 +22,13 @@
 <script>
 /* eslint-disable */
 import LoginButton from './LoginButton.vue'
+import SignupButton from './SignupButton.vue'
 
 export default {
   name: 'OnsenHome',
   components: {
-    LoginButton
+    LoginButton,
+    SignupButton
   },
   data () {
     return {

@@ -6,6 +6,7 @@ import Tinder from '@/components/Tinder'
 import OnsenList from '@/components/OnsenList'
 import Category from '@/components/Category'
 import Login from '@/components/Login'
+import Signup from '@/components/Signup'
 import NotFound from '@/components/NotFound'
 
 Vue.use(Router)
@@ -38,6 +39,10 @@ export default new Router({
     {
       path: '/login',
       component: Login,
+    },
+    {
+      path: '/signup',
+      component: Signup,
     },
     {
       path: '*',
