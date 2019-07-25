@@ -74,9 +74,11 @@ export default {
     console.log(this.count)
     console.log(this.pagesize)
 
-    //for (  var i = 0;  i < 6;  i++  ) {
+  },
+
+  async beforeMount () {
     for (  var i = 0;  i < this.pagesize;  i++  ) {
-      axios.get('http://localhost:8000/api/onsen_inns/', {
+      await axios.get('http://localhost:8000/api/onsen_inns/', {
         params: {
           category: this.category,
           ordering: this.ordering,
@@ -90,6 +92,7 @@ export default {
         .catch(err => {
           console.error(err)
         })
+
     }
   },
 

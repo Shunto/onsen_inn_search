@@ -15,7 +15,7 @@
           </div>
           </v-card-title>
           <v-card-actions>
-            <v-btn flat color="orange" @click="goBackToOnsenList(1)"> 温泉リストに戻る </v-btn> 
+            <v-btn flat color="orange" @click="goBackToOnsenList(1)"> 温泉リストに戻る </v-btn>
             <VoteButton v-bind:innId="this.$route.params.id"></VoteButton>
           </v-card-actions>
         </v-card>

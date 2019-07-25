@@ -6,7 +6,7 @@
 
           <v-flex xs12>
             <br>
-            <h1 class=display-3>あなたにぴったりなのはチーム{{category}} 総員{{count}}名</h1>
+            <h1 class=display-3>あなたにぴったりなのはチーム{{category}} 総員{{count}}名!</h1>
             <br>
           </v-flex>
           <v-flex xs12>
