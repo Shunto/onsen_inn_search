@@ -46,12 +46,9 @@ export default {
     return {
       category: 0,
       page: 1,
-<<<<<<< HEAD
       ordering: '-vote_score',
-=======
       count: 0,
       pagesize: 0,
->>>>>>> fix
       items: []
     }
   },
