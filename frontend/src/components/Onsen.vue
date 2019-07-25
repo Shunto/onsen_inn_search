@@ -15,7 +15,7 @@
           </div>
           </v-card-title>
           <v-card-actions>
-            <v-btn flat color="orange" @click="goBackToOnsenList(1)"> 温泉リストに戻る </v-btn>
+            <v-btn flat color="orange" @click="goBackToOnsenList(1)"> 温泉リストに戻る </v-btn> 
             <VoteButton v-bind:innId="this.$route.params.id"></VoteButton>
           </v-card-actions>
         </v-card>
@@ -41,6 +41,7 @@ export default {
       innname: '',
       category: 0,
       votescore: 0,
+      count: 0,
       imgpath: [
         [
           require('../assets/images/0/download20190702162626.png'),
@@ -147,6 +148,9 @@ export default {
     }
   },
   created () {
+    if (this.$route.query.count != null) {
+      this.count = this.$route.query.count
+    }
     axios.get('http://localhost:8000/api/onsen_inns/', {
       params: {
         id: this.$route.params.id,
@@ -156,7 +160,7 @@ export default {
         console.log(response.data)
         this.inn = response.data.results[0]
         this.innname = response.data.results[0].inn_name
-        this.category = response.data.results[0]
+        this.category = response.data.results[0].category
         this.votescore = response.data.results[0].vote_score
       })
       .catch(err => {
@@ -284,9 +288,10 @@ export default {
       return text
     },
     goBackToOnsenList: function (page) {
-      this.$router.push({ path: '/onsenlist', params: {
+      this.$router.push({ path: '/onsenlist', query: {
         category: this.category,
-        page: page
+        page: page,
+        count: this.count
       }})
     }
   }

@@ -6,7 +6,7 @@
 
           <v-flex xs12>
             <br>
-            <h1 class=display-3>あなたにぴったりなのはチーム{{category}}</h1>
+            <h1 class=display-3>あなたにぴったりなのはチーム{{category}} 総員{{count}}名</h1>
             <br>
           </v-flex>
           <v-flex xs12>
@@ -47,7 +47,7 @@
               <v-flex xs6>
                 <v-card>
                   <h2 class=display-2>{{ texts[category] }}</h2>
-                  <v-btn class=display-1 block large dark color='deep-orange' :href="'/#/onsenlist/?category=' + category + '&page=1'">推しを見つける</v-btn>
+                  <v-btn class=display-1 block large dark color='deep-orange' :href="'/#/onsenlist/?category=' + category + '&page=1' + '&count=' + count">推しを見つける</v-btn>
                 </v-card>
               </v-flex>
             </v-layout>
@@ -68,6 +68,7 @@ export default {
       msg: 'Category Page',
       category: this.$route.query.num,
       linkTo: '/#/onsenlist/?category=' + this.category + '&page=1',
+      count: 60,
       imgpath: [
         [
           require('../assets/images/0/download20190702162626.png'),
@@ -199,6 +200,7 @@ export default {
       })
         .then(response => {
           this.items = response.data.results
+          this.count = response.data.count
           console.log(this.items)
         })
         .catch(err => {
@@ -206,7 +208,7 @@ export default {
         })
     },
     goToOnsenList () {
-      this.$router.push({ path: '/onsenlist', query: { category: this.category, page: 1 } })
+      this.$router.push({ path: '/onsenlist', query: { category: this.category, page: 1, count: this.count } })
     },
   },
 
