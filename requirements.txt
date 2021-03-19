@@ -6,7 +6,7 @@ pandas
 sklearn
 matplotlib
 beautifulsoup4
-djangorestframework==3.9.4 
+djangorestframework==3.11.2 
 #djangorestframework
 django-filter
 django-cors-headers
